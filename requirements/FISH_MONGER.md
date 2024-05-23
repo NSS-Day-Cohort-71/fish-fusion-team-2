@@ -7,7 +7,7 @@ Since the fish monger needs to see what the fresh catch of the day is, it will n
 ##### Example
 
 ```js
-const { functionVariable } = require("./fishingBoat.js")
+const { functionVariable } = require('./fishingBoat.js');
 ```
 
 ## Monger Inventory

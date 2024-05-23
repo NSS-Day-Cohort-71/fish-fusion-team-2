@@ -1,19 +1,15 @@
 const { mongerInventory } = require('./fishMonger');
 
-const mongerArray = mongerInventory();
-const chefArray = [];
 let menuItems = '';
+const dailyPriceLimit = 7;
 
-const fishMenu = (budget) => {
-  mongerArray.map((fish) => {
-    if (fish.price < budget) {
-      fish.amount /= 2;
-      chefArray.push(fish);
-    }
-  });
+//get chef approved fish based on budget
+const chefArray = mongerInventory(dailyPriceLimit);
 
-  chefArray.map((fish) => {
-    menuItems += `
+//organize the menu
+const fishMenu = () => {
+  const menuItems = chefArray.map((fish) => {
+    return `
     <h2>${fish.species}</h2>
     <section class="menu__item">${fish.species} Soup</section>
     <section class="menu__item">${fish.species} Sandwich</section>
@@ -21,11 +17,10 @@ const fishMenu = (budget) => {
     
     `;
   });
-
   const html = `
 <h1>Menu</h1>
   <article class="menu">
-  ${menuItems}
+  ${menuItems.join('')}
   </article>
   `;
   return html;
