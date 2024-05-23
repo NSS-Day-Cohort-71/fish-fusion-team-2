@@ -5,9 +5,11 @@ let mongerArray = [];
 const mongerInventory = () => {
   fishInventory.map((fish) => {
     if (fish.amount >= 10 && fish.price <= 7.5) {
-      fish.amount = 10;
       mongerArray.push(fish);
     }
+  });
+  mongerArray.map((fish) => {
+    fish.amount = 10;
   });
 
   return mongerArray;
