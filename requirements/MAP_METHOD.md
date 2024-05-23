@@ -12,11 +12,11 @@ Currently, you have `for..of` loop that looks like the code provided below. It's
 
 ```js
 for (const item of todaysIngredients) {
-    html += `<h2>${item.species}</h2>
+  html += `<h2>${item.species}</h2>
         <section class="menu__item">${item.species} Soup</section>
         <section class="menu__item">${item.species} Sandwich</section>
         <section class="menu__item">Grilled ${item.species}</section>
-    `
+    `;
 }
 ```
 
